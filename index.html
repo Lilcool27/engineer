@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الملف الشخصي - المهندس محمد حافظ مبارك عمر</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1269e2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Cairo", "sans-serif"],
+                        "sans": ["Cairo", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d131b] dark:text-white antialiased">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7ecf3] dark:border-b-gray-800 bg-white dark:bg-[#101822] px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="size-8 flex items-center justify-center rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<h2 class="text-[#0d131b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">م. محمد حافظ</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 hidden md:flex">
+<div class="flex items-center gap-9">
+<a class="text-[#0d131b] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal" href="#about">نبذة عني</a>
+<a class="text-[#0d131b] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal" href="#services">الخدمات</a>
+<a class="text-[#0d131b] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal" href="#portfolio">المعرض</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-blue-700 transition-colors">
+<span class="truncate">تواصل معي</span>
+</button>
+</div>
+<button class="md:hidden text-gray-700 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<section class="px-4 py-10 md:px-10 lg:px-40 flex flex-1 justify-center bg-white dark:bg-[#101822]" id="about">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<div class="@container">
+<div class="flex flex-col gap-6 py-10 @[864px]:flex-row items-center">
+<div class="w-full @[864px]:w-1/2 aspect-square max-h-[400px] bg-center bg-no-repeat bg-cover rounded-xl shadow-lg" data-alt="Professional architect portrait with modern building background" style='background-image: url("image.png");'>
+</div>
+<div class="flex flex-col gap-6 @[864px]:w-1/2 @[864px]:justify-center @[864px]:pr-8">
+<div class="flex flex-col gap-2 text-right">
+<span class="text-primary font-bold tracking-wider uppercase text-sm">مهندس معماري – مدير شركة مقاولات</span>
+<h1 class="text-[#0d131b] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl">
+                                    محمد حافظ مبارك عمر
+                                </h1>
+<p class="text-xl font-bold text-gray-800 dark:text-gray-200 mt-1">
+                                    نحول الرؤى المعمارية إلى واقع إنشائي ملموس
+                                </p>
+<p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-relaxed mt-4">
+                                    مهندس معماري ومدير مشاريع بخبرة راسخة تمتد لسنوات في قيادة وتنفيذ المشاريع الكبرى. أجمع بين الرؤية الإبداعية في التصميم والدقة المتناهية في إدارة شركات المقاولات. من الفيلات الخاصة إلى المشاريع التجارية، ألتزم بتقديم حلول تجمع بين الجمالية، الوظيفة، والجدوى الاقتصادية، مع ضمان أعلى معايير الجودة في التنفيذ.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold shadow-md hover:bg-blue-700 transition-colors">
+<span class="material-symbols-outlined ml-2 text-[20px]">download</span>
+<span>تحميل السيرة الذاتية</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gray-100 dark:bg-gray-800 text-[#0d131b] dark:text-white border border-transparent hover:border-gray-300 dark:hover:border-gray-600 text-base font-bold transition-colors">
+                                    مشاهدة المشاريع
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-[#f6f7f8] dark:bg-gray-900 py-12 px-4 md:px-10 lg:px-40 flex justify-center border-y border-gray-200 dark:border-gray-800">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#1c2632] shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined">calendar_month</span>
+<p class="text-sm font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">سنوات الخبرة</p>
+</div>
+<p class="text-[#0d131b] dark:text-white text-3xl font-black leading-tight">+12 <span class="text-lg font-medium text-gray-500">سنة</span></p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#1c2632] shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined">apartment</span>
+<p class="text-sm font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">مشروع منجز</p>
+</div>
+<p class="text-[#0d131b] dark:text-white text-3xl font-black leading-tight">45</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#1c2632] shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined">attach_money</span>
+<p class="text-sm font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">حجم المشاريع</p>
+</div>
+<p class="text-[#0d131b] dark:text-white text-3xl font-black leading-tight">+150M</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-[#1c2632] shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+<p class="text-sm font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">رضا العملاء</p>
+</div>
+<p class="text-[#0d131b] dark:text-white text-3xl font-black leading-tight">100%</p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-16 md:px-10 lg:px-40 flex flex-1 justify-center bg-white dark:bg-[#101822]" id="services">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-10">
+<div class="flex flex-col items-center text-center gap-3">
+<h2 class="text-[#0d131b] dark:text-white text-3xl font-bold leading-tight">مجالات الخبرة</h2>
+<p class="text-gray-500 dark:text-gray-400 max-w-2xl">حلول معمارية وهندسية متكاملة تبدأ من الفكرة الأولية وتستمر حتى تسليم المفتاح.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="group flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-[#1c2632] hover:bg-white dark:hover:bg-[#252f3e] hover:shadow-lg transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">design_services</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white mb-2">التصميم المعماري</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">تصاميم مبتكرة وعملية مصممة خصيصاً لتلبية احتياجات العميل، مع مراعاة الجمالية والاستدامة.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-[#1c2632] hover:bg-white dark:hover:bg-[#252f3e] hover:shadow-lg transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">engineering</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white mb-2">إدارة المشاريع</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">إدارة شاملة لمشاريع البناء لضمان كفاءة الجدول الزمني، الموارد، والتحكم بالميزانية.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-[#1c2632] hover:bg-white dark:hover:bg-[#252f3e] hover:shadow-lg transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">chef_hat</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white mb-2">الإشراف الهندسي</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">إشراف ميداني دقيق لضمان مطابقة التنفيذ للمخططات الهندسية ومعايير السلامة.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-[#1c2632] hover:bg-white dark:hover:bg-[#252f3e] hover:shadow-lg transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">handshake</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white mb-2">الاستشارات الهندسية</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">تقديم المشورة الفنية ودراسات الجدوى وتقدير التكاليف للمشاريع المحتملة.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-[#1c2632] hover:bg-white dark:hover:bg-[#252f3e] hover:shadow-lg transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">home_work</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white mb-2">المقاولات العامة</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">تنفيذ وإدارة عقود المقاولات وتنسيق عمل المقاولين من الباطن بجودة عالية.</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4 p-6 rounded-xl bg-background-light dark:bg-[#1c2632] hover:bg-white dark:hover:bg-[#252f3e] hover:shadow-lg transition-all border border-transparent hover:border-gray-100 dark:hover:border-gray-700">
+<div class="size-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[28px]">check_circle</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white mb-2">ضمان الجودة</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">تطبيق صارم لمعايير الجودة لضمان المتانة والتشطيب المثالي لكل مشروع.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-16 md:px-10 lg:px-40 flex flex-1 justify-center bg-[#f6f7f8] dark:bg-gray-900" id="portfolio">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="flex flex-col gap-2">
+<h2 class="text-[#0d131b] dark:text-white text-3xl font-bold leading-tight">معرض الأعمال</h2>
+<p class="text-gray-500 dark:text-gray-400">لمحة مختارة عن المشاريع التي قمنا بتنفيذها.</p>
+</div>
+<a class="text-primary font-medium hover:underline flex items-center gap-1" href="#">
+                        عرض جميع المشاريع <span class="material-symbols-outlined text-sm rtl:rotate-180">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="group relative overflow-hidden rounded-xl bg-gray-200 aspect-video md:aspect-[4/3]">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern luxury villa exterior with pool at dusk" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEFFVwjOkJ3wkLiKyGxv57DYoOpabYuTzu2EUc4VlPhFyKwgIJlP5BUO6QRqpfgAXbBCKI-ALvaG1OarfiBxdLPyEDBdIO0ovC6aRFIcUeWQXTRjzAi_1gMNyvcaFUDh4ocvMyKbLoho5G7xIP-zr2DnWTo9GF7ufmysODbBchhCTkq7xLkI_9Dum85Jsxihwwo6lRZGrY40xnXSmLT6pgFWIunyQEb5Zp_SFZU8W_jOCaI__oTksA-djFgjJv8K56PBWB-CPZzuK3");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-sm font-bold uppercase tracking-wider mb-1">سكني</span>
+<h3 class="text-white text-xl font-bold">فيلا مرتفعات أزور</h3>
+<p class="text-gray-300 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> دبي، الإمارات
+                            </p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-gray-200 aspect-video md:aspect-[4/3]">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Tall glass office skyscraper in city center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfrYx2_7J-N7N0RpVTAehVKCbNGzOjAlJBC8dg8QQieQSJKg8JBpr5_dkThu4H4TMYEuYuUBiPyAtN8m4B5CnX_7pEYa7O6mpiAZYWD2n6wF_ebLCJP6QezErRdmeG_VHcAcM66LEwWjIdaStz61b8e9eoN3gu5_FRzm0W3xelc1CxZL42flm2TJsDJylgYjUXC-0r4kL82Jm5PiaVqkSqrE7YYg3SfEnMNN94g2yzcGh309GvM3bsIYjv5ZKh_KsVF_45K9nv1aYL");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-sm font-bold uppercase tracking-wider mb-1">تجاري</span>
+<h3 class="text-white text-xl font-bold">برج واحة التقنية</h3>
+<p class="text-gray-300 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> الرياض، السعودية
+                            </p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-gray-200 aspect-video md:aspect-[4/3]">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern minimalist interior living room design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBz8YNgCILcOmw5RGIrUQYm-l1lWuyYKu0izavo3isgrFev0ZuasfMxfcSpdoJVJvXW-Z6l4_6h2-bxaLXg7SEhnKrnTz514D2zKUob0fq0NID69sx_32oXt5C7_MNr8d__7WaWdzipR4u6WrZjzYB4eLKitxEjsgIqyPCxLdnQEnN8bPAQV6catbdrJLFvcZfpuIo24u6jHQPkEKUdjb4ND1dn6NCmZ5zUZ2gN9P1ojIIcjQBRlkHQitenV6YtvGn3kE7HWleeE3mj");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-sm font-bold uppercase tracking-wider mb-1">تصميم داخلي</span>
+<h3 class="text-white text-xl font-bold">تجديد شقة مودرن</h3>
+<p class="text-gray-300 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> برلين، ألمانيا
+                            </p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl bg-gray-200 aspect-video md:aspect-[4/3]">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Construction site supervision with blueprints" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIvR-C3DTeNrV4bKircICkYOrSRj1zBXv2kKKUsABuhv9glE83_DD5UDnk1VYOx_M4z9ZbyyfbS3AttZUvhQ2Zhc_6kwL0xguZqIi5fTPlDVK-3NJdi5a5Ufs9lTZf2qZfvOnjvtVb9NWwsuFa-_xpHsjte_8a-W7OQHlWtmGeKKDVjpQKidebvgmQ8NzO3Buahw6cF6iCSlPZJ8YO0hdF22oeXk78XAJk6cSEpYfg0jm_7L5PSgx2QWPovxOOKbzl-r3K2mXYIFEk");'></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-sm font-bold uppercase tracking-wider mb-1">إدارة وإنشاءات</span>
+<h3 class="text-white text-xl font-bold">توسعة المول المركزي</h3>
+<p class="text-gray-300 text-sm mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> القاهرة، مصر
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 py-16 md:px-10 lg:px-40 flex flex-1 justify-center bg-white dark:bg-[#101822]">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-12">
+<div class="text-center">
+<h2 class="text-[#0d131b] dark:text-white text-3xl font-bold leading-tight mb-4">لماذا تختارني؟</h2>
+<p class="text-gray-500 dark:text-gray-400">نقدم قيمة حقيقية من خلال النزاهة المهنية والعمليات المدروسة.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center gap-3">
+<div class="size-16 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[32px]">verified</span>
+</div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white">الجودة أولاً</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">معايير لا تقبل المساومة في المواد ودقة التنفيذ.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<div class="size-16 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[32px]">schedule</span>
+</div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white">الالتزام بالمواعيد</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">جدولة صارمة لضمان تسليم المشاريع في وقتها المحدد.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<div class="size-16 rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[32px]">savings</span>
+</div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white">إدارة ذكية للميزانية</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">تخصيص ذكي للموارد لتعظيم القيمة وتقليل الهدر.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<div class="size-16 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[32px]">chat</span>
+</div>
+<h3 class="text-lg font-bold text-[#0d131b] dark:text-white">وضوح التواصل</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">تقارير شفافة وتواصل مستمر طوال فترة المشروع.</p>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-[#101822] text-white py-16 px-4 md:px-10 lg:px-40 flex justify-center">
+<div class="layout-content-container flex flex-col items-center max-w-[960px] flex-1 text-center gap-8">
+<h2 class="text-3xl font-bold leading-tight max-w-xl">جاهز لبدء مشروعك القادم مع خبير محترف؟</h2>
+<p class="text-gray-400 text-lg max-w-2xl">دعنا نناقش رؤيتك وكيف يمكننا تحويلها إلى واقع بكفاءة وجمالية.</p>
+<div class="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4">
+<button class="flex items-center justify-center gap-2 h-14 px-8 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold text-lg transition-all w-full sm:w-auto">
+<span class="material-symbols-outlined">call</span>
+<span>اتصل الآن</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-14 px-8 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-lg transition-all w-full sm:w-auto">
+<span class="material-symbols-outlined">chat</span>
+<span>واتساب</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-14 px-8 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-lg transition-all border border-white/10 w-full sm:w-auto">
+<span class="material-symbols-outlined">mail</span>
+<span>راسلنا</span>
+</button>
+</div>
+<div class="mt-12 pt-8 border-t border-gray-800 w-full flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+<p>© 2026 م. محمد حافظ. جميع الحقوق محفوظة.</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-white transition-colors" href="#">لينكد إن</a>
+<a class="hover:text-white transition-colors" href="#">انستغرام</a>
+<a class="hover:text-white transition-colors" href="#">بيهانس</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
