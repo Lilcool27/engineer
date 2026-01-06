@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>معرض صور المشاريع</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Noto+Sans+Arabic:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1269e2",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Sans Arabic", "Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    animation: {
+                        'fade-in-scale': 'fadeInScale 0.4s ease-out forwards',
+                        'slide-in': 'slideIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInScale: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        slideIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111822; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #233348; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1269e2; 
+        }.modal-image {
+            opacity: 0;
+            transform: scale(0.98);
+            transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .peer:checked ~ div .modal-image {
+            opacity: 1;
+            transform: scale(1);
+            transition-delay: 0.1s;
+        }.nav-btn-prev, .nav-btn-next {
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .nav-btn-prev:hover { transform: translateX(4px) scale(1.1); }
+        .nav-btn-next:hover { transform: translateX(-4px) scale(1.1); }.modal-backdrop {
+            transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-[#233348] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 text-primary flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined">apartment</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight">مكتب العمران</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">الرئيسية</a>
+<a class="text-sm font-medium text-primary font-bold" href="#">المعرض</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">عن المكتب</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">تواصل معنا</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center gap-2 h-9 px-4 rounded-lg bg-primary hover:bg-blue-600 text-white text-sm font-bold transition-all shadow-lg shadow-primary/20 group">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-1 transition-transform">arrow_forward</span>
+<a class="hidden sm:inline" href="index.html">عودة للملف الشخصي</a>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="mb-12 flex flex-col items-start gap-4 animate-slide-in">
+<div class="flex items-center gap-2 text-primary text-sm font-medium bg-primary/10 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-sm">photo_library</span>
+<span>الأرشيف البصري</span>
+</div>
+<h2 class="text-3xl md:text-5xl font-black leading-tight tracking-tight">معرض صور المشاريع</h2>
+<p class="text-gray-500 dark:text-[#92a9c9] text-lg max-w-2xl font-light">
+                جولة بصرية في تفاصيل أعمالنا المعمارية. نؤمن بأن الصورة تغني عن ألف كلمة، لذا ندعك تستكشف الإتقان في التصميم والتنفيذ. اضغط على أي صورة للتكبير والتنقل بين الصور.
+            </p>
+</div>
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+    <div class="break-inside-avoid relative">
+    <input class="peer sr-only" id="modal-1" type="checkbox"/>
+    <label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-1">
+    <div class="aspect-[3/4] w-full overflow-hidden">
+    <img alt="Modern minimalist concrete facade with glass windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist concrete facade with glass windows" src="WhatsApp Image 2026-01-05 at 3.22.57 PM.jpeg"/>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+    <span class="material-symbols-outlined text-white">fullscreen</span>
+    </div>
+    </label>
+    <div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+    <label class="absolute inset-0 cursor-default" for="modal-1"></label>
+    <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+    <label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-1">
+    <span class="material-symbols-outlined text-3xl">close</span>
+    </label>
+    <label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+    <span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+    </label>
+    <img alt="Modern minimalist concrete facade with glass windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="WhatsApp Image 2026-01-05 at 3.22.57 PM.jpeg"/>
+    <label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+    <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+    </label>
+    </div>
+    </div>
+    </div>
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+    <div class="break-inside-avoid relative">
+    <input class="peer sr-only" id="modal-1" type="checkbox"/>
+    <label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-1">
+    <div class="aspect-[3/4] w-full overflow-hidden">
+    <img alt="Modern minimalist concrete facade with glass windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist concrete facade with glass windows" src="WhatsApp Image 2026-01-05 at 3.22.55 PM.jpeg"/>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+    <span class="material-symbols-outlined text-white">fullscreen</span>
+    </div>
+    </label>
+    <div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+    <label class="absolute inset-0 cursor-default" for="modal-1"></label>
+    <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+    <label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-1">
+    <span class="material-symbols-outlined text-3xl">close</span>
+    </label>
+    <label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+    <span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+    </label>
+    <img alt="Modern minimalist concrete facade with glass windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="WhatsApp Image 2026-01-05 at 3.22.55 PM.jpeg"/>
+    <label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+    <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+    </label>
+    </div>
+    </div>
+    </div>
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+    <div class="break-inside-avoid relative">
+    <input class="peer sr-only" id="modal-1" type="checkbox"/>
+    <label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-1">
+    <div class="aspect-[3/4] w-full overflow-hidden">
+    <img alt="Modern minimalist concrete facade with glass windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist concrete facade with glass windows" src="WhatsApp Image 2026-01-05 at 3.22.54 PM.jpeg"/>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+    <span class="material-symbols-outlined text-white">fullscreen</span>
+    </div>
+    </label>
+    <div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+    <label class="absolute inset-0 cursor-default" for="modal-1"></label>
+    <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+    <label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-1">
+    <span class="material-symbols-outlined text-3xl">close</span>
+    </label>
+    <label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+    <span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+    </label>
+    <img alt="Modern minimalist concrete facade with glass windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="WhatsApp Image 2026-01-05 at 3.22.54 PM.jpeg"/>
+    <label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+    <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+    </label>
+    </div>
+    </div>
+    </div>
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+    <div class="break-inside-avoid relative">
+    <input class="peer sr-only" id="modal-1" type="checkbox"/>
+    <label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-1">
+    <div class="aspect-[3/4] w-full overflow-hidden">
+    <img alt="Modern minimalist concrete facade with glass windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist concrete facade with glass windows" src="WhatsApp Image 2026-01-05 at 3.22.59 PM.jpeg"/>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+    <span class="material-symbols-outlined text-white">fullscreen</span>
+    </div>
+    </label>
+    <div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+    <label class="absolute inset-0 cursor-default" for="modal-1"></label>
+    <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+    <label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-1">
+    <span class="material-symbols-outlined text-3xl">close</span>
+    </label>
+    <label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+    <span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+    </label>
+    <img alt="Modern minimalist concrete facade with glass windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="WhatsApp Image 2026-01-05 at 3.22.59 PM.jpeg"/>
+    <label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+    <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+    </label>
+    </div>
+    </div>
+    </div>
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+    <div class="break-inside-avoid relative">
+    <input class="peer sr-only" id="modal-1" type="checkbox"/>
+    <label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-1">
+    <div class="aspect-[3/4] w-full overflow-hidden">
+    <img alt="Modern minimalist concrete facade with glass windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist concrete facade with glass windows" src="WhatsApp Image 2026-01-05 at 3.22.56 PM.jpeg"/>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+    <span class="material-symbols-outlined text-white">fullscreen</span>
+    </div>
+    </label>
+    <div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+    <label class="absolute inset-0 cursor-default" for="modal-1"></label>
+    <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+    <label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-1">
+    <span class="material-symbols-outlined text-3xl">close</span>
+    </label>
+    <label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+    <span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+    </label>
+    <img alt="Modern minimalist concrete facade with glass windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="WhatsApp Image 2026-01-05 at 3.22.56 PM.jpeg"/>
+    <label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+    <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+    </label>
+    </div>
+    </div>
+    </div>
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+    <div class="break-inside-avoid relative">
+    <input class="peer sr-only" id="modal-1" type="checkbox"/>
+    <label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-1">
+    <div class="aspect-[3/4] w-full overflow-hidden">
+    <img alt="Modern minimalist concrete facade with glass windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist concrete facade with glass windows" src="WhatsApp Image 2026-01-05 at 12.18.33 AM.jpeg"/>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+    <span class="material-symbols-outlined text-white">fullscreen</span>
+    </div>
+    </label>
+    <div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+    <label class="absolute inset-0 cursor-default" for="modal-1"></label>
+    <div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+    <label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-1">
+    <span class="material-symbols-outlined text-3xl">close</span>
+    </label>
+    <label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+    <span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+    </label>
+    <img alt="Modern minimalist concrete facade with glass windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="WhatsApp Image 2026-01-05 at 12.18.33 AM.jpeg"/>
+    <label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+    <span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+    </label>
+    </div>
+    </div>
+    </div>
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-1" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-1">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Modern minimalist concrete facade with glass windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern minimalist concrete facade with glass windows" src="WhatsApp Image 2026-01-05 at 3.22.58 PM.jpeg"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-1"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-1">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Modern minimalist concrete facade with glass windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="WhatsApp Image 2026-01-05 at 3.22.58 PM.jpeg"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-2" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-2">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Low angle view of modern skyscraper with reflective glass" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Low angle view of modern skyscraper with reflective glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEVvVqyc8Tz9TVt7CMqXquIluZXqW9_V5b8u4KzGHfvu7BMJAV6ZS1C5gzOxfko6ZYgonqJQkaXbCAEmGbrKs91AGgFCwbKDdF3NRE7vFnQLR19-eA4P7fGFzMkJ_xIgaB1WErvluHoCFBJb5m0TcMaS5TgCgVU2o3ISIVrXPKoQpRkjdfYFXayT93REf0XiyAFOvLnKf48YjQcjHg-VZ-487TgXfmW3-DDwICBIu6P0WoZGCDPPo_ncSQUTYBZ1tKfNIKJO9hE4oS"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-2"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-2">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-1">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Low angle view of modern skyscraper with reflective glass" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEVvVqyc8Tz9TVt7CMqXquIluZXqW9_V5b8u4KzGHfvu7BMJAV6ZS1C5gzOxfko6ZYgonqJQkaXbCAEmGbrKs91AGgFCwbKDdF3NRE7vFnQLR19-eA4P7fGFzMkJ_xIgaB1WErvluHoCFBJb5m0TcMaS5TgCgVU2o3ISIVrXPKoQpRkjdfYFXayT93REf0XiyAFOvLnKf48YjQcjHg-VZ-487TgXfmW3-DDwICBIu6P0WoZGCDPPo_ncSQUTYBZ1tKfNIKJO9hE4oS"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-3">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-3" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-3">
+<div class="aspect-square w-full overflow-hidden">
+<img alt="Luxury living room interior with large windows" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Luxury living room interior with large windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYNbChh1TAUcmtsgdVsq3Y-K2DgSGRO9cxSgbbgAlR8KTVQgUMld_HiPOVdkMuXTwQLn8m1IHLK01z4gqm8beuKU-Lgqde3P6dhb7BZzpdhAYkYnQ3oVyQX2Ei9CvSvSgr9mGIo-yYFtsYTivHHgC_wBjH_IgDEh5YUfD8q59hWy3NlrKEkAIMJFvagp8433yvnGIFV-pUtiHkvI-_ZZNPEvr9FjxbiXUUN1D165geZur7Y7X8Qwedo8D5_8T2BpzciBPgdVCSu-tI"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-3"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-3">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-2">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Luxury living room interior with large windows" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYNbChh1TAUcmtsgdVsq3Y-K2DgSGRO9cxSgbbgAlR8KTVQgUMld_HiPOVdkMuXTwQLn8m1IHLK01z4gqm8beuKU-Lgqde3P6dhb7BZzpdhAYkYnQ3oVyQX2Ei9CvSvSgr9mGIo-yYFtsYTivHHgC_wBjH_IgDEh5YUfD8q59hWy3NlrKEkAIMJFvagp8433yvnGIFV-pUtiHkvI-_ZZNPEvr9FjxbiXUUN1D165geZur7Y7X8Qwedo8D5_8T2BpzciBPgdVCSu-tI"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-4">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-4" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-4">
+<div class="aspect-[2/3] w-full overflow-hidden">
+<img alt="White geometric modern residential house exterior" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="White geometric modern residential house exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqa00YN5kRuQmDejHKFnFnO5BON8Zj6fjRiFfmwR_puo6AC9VVXsA7fjJTuiyY186bpSPpou0PwF1QAad6sh_AKA1A6amvkn4NRpAFekSQePizrmQHTzbEp8i-HmZYkJNuL3Y1fcMWH8cEcEQZn07VSMmml0hDBHULhJu73Et3nprF7jqCJYx5pKlH2l4z8eSHIoGTt2TX1gtEMb420rcn8F_KTQqPwLVgbLcI0-IFHLgEVZsMhEa73KF1lw96QLoVuzPjKqk6jMB_"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-4"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-4">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-3">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="White geometric modern residential house exterior" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqa00YN5kRuQmDejHKFnFnO5BON8Zj6fjRiFfmwR_puo6AC9VVXsA7fjJTuiyY186bpSPpou0PwF1QAad6sh_AKA1A6amvkn4NRpAFekSQePizrmQHTzbEp8i-HmZYkJNuL3Y1fcMWH8cEcEQZn07VSMmml0hDBHULhJu73Et3nprF7jqCJYx5pKlH2l4z8eSHIoGTt2TX1gtEMb420rcn8F_KTQqPwLVgbLcI0-IFHLgEVZsMhEa73KF1lw96QLoVuzPjKqk6jMB_"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-5">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-5" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-5">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img alt="Industrial style kitchen with pendant lights" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Industrial style kitchen with pendant lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfcmizHbDZ39IqDhMdmFShHdrIHT0m5Eg0TkAs_TCmf-9rBW1uZA5gky1sT5qhoiSwMHZm1NtxRiSYgbINVM_qw0ROZiljFaik4mPzMvYsTreZLjBoD5-t72sqlG-6-DwKFu8O-hnDUrQHJLcrbH0qs1HMqmpEQudyI_jrrcLxwf9CTxAVJZdra_aOhLch8JFHcIC3MPASU4r80HTrzINS3bHH2pp8jSJ43Re0izq4oXDWQqYe4n6tfJGVJyGdWjHiFKMwIOwwM6wm"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-5"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-5">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-4">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Industrial style kitchen with pendant lights" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfcmizHbDZ39IqDhMdmFShHdrIHT0m5Eg0TkAs_TCmf-9rBW1uZA5gky1sT5qhoiSwMHZm1NtxRiSYgbINVM_qw0ROZiljFaik4mPzMvYsTreZLjBoD5-t72sqlG-6-DwKFu8O-hnDUrQHJLcrbH0qs1HMqmpEQudyI_jrrcLxwf9CTxAVJZdra_aOhLch8JFHcIC3MPASU4r80HTrzINS3bHH2pp8jSJ43Re0izq4oXDWQqYe4n6tfJGVJyGdWjHiFKMwIOwwM6wm"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-6">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-6" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-6">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Contemporary architecture with wooden elements" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Contemporary architecture with wooden elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaSLacOGbjFMOFPqcefAVFMyNIpiHK-pXWge3Ws116NcqXlZNUmxWq1vfIKTizT2J6FqdzxS8XbVfLq0hl8--WuCXnp7VbpRjIdeAOseeTi-kj7TA5WAF1pphAjamnAMKCmicyEtbHDjlUTDmIk7ycO-XCwV5SwFwFuvUwOdcd__sp4YTp2lvzP5JGZvt6xUMyvhC0irW66cYjaEZ6FfcK3jq0_OMzqieZijxGrOT4Pn9KeKAsuZ_4D6wr_5YOn0u1ZmOkG26J_Yw9"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-6"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-6">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-5">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Contemporary architecture with wooden elements" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaSLacOGbjFMOFPqcefAVFMyNIpiHK-pXWge3Ws116NcqXlZNUmxWq1vfIKTizT2J6FqdzxS8XbVfLq0hl8--WuCXnp7VbpRjIdeAOseeTi-kj7TA5WAF1pphAjamnAMKCmicyEtbHDjlUTDmIk7ycO-XCwV5SwFwFuvUwOdcd__sp4YTp2lvzP5JGZvt6xUMyvhC0irW66cYjaEZ6FfcK3jq0_OMzqieZijxGrOT4Pn9KeKAsuZ_4D6wr_5YOn0u1ZmOkG26J_Yw9"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-7">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-7" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-7">
+<div class="aspect-[3/5] w-full overflow-hidden">
+<img alt="Dark modern high-rise building with lights" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Dark modern high-rise building with lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfTdbdpo7yyYVj6RdCeuG7PjbX4_hOA5P7zzoV5AjaaMa_D3lm-okSqXo6NbatHQ2yOUMRzkqsGl215_KTKaNMBvJ6yM_StyV_Wse-xWelasfDaWng8sw7S0W3Sp6UKX7xB-L8B4ho3Og9TBxoxoxSZo14MWYvux5-3N40rMCXCDHeBezqZz-l_jtbX-paNgxPEo9LSU97bxkmcTBaC4Q3sI3AyvToukCpE3wpo3Vfqf1xIyB9UXaUbRYDMWEcaMLkSeVdHF6j3ruD"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-7"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-7">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-6">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Dark modern high-rise building with lights" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfTdbdpo7yyYVj6RdCeuG7PjbX4_hOA5P7zzoV5AjaaMa_D3lm-okSqXo6NbatHQ2yOUMRzkqsGl215_KTKaNMBvJ6yM_StyV_Wse-xWelasfDaWng8sw7S0W3Sp6UKX7xB-L8B4ho3Og9TBxoxoxSZo14MWYvux5-3N40rMCXCDHeBezqZz-l_jtbX-paNgxPEo9LSU97bxkmcTBaC4Q3sI3AyvToukCpE3wpo3Vfqf1xIyB9UXaUbRYDMWEcaMLkSeVdHF6j3ruD"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-8">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-8" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-8">
+<div class="aspect-square w-full overflow-hidden">
+<img alt="Modern pool area with lounge chairs" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Modern pool area with lounge chairs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOe_Zbdr4YD6r6srJOrer1Uim7GecQfhJHeF0c6MS8PhhrNwHwRd1pzSPsAt5TlHBrepwbmjCIsCkUbB1KWc0sX3uvVNmVaTQNHjZWytbabOdxf23TB6UaRgIIbXGjiWY-Njy7oXj_r0HIA9cThS87bRXtW4FAStuF9w7VUMTl9Ia8zNpUy06kiyutPmefCDbo9mIxztVF6btwDrecI3DctNhRcyLx1hCX1ahJ4gfkGuNSjMWEiewQ3F5BfDoHWrx4PruEHOnWXI-U"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-8"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-8">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-7">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Modern pool area with lounge chairs" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOe_Zbdr4YD6r6srJOrer1Uim7GecQfhJHeF0c6MS8PhhrNwHwRd1pzSPsAt5TlHBrepwbmjCIsCkUbB1KWc0sX3uvVNmVaTQNHjZWytbabOdxf23TB6UaRgIIbXGjiWY-Njy7oXj_r0HIA9cThS87bRXtW4FAStuF9w7VUMTl9Ia8zNpUy06kiyutPmefCDbo9mIxztVF6btwDrecI3DctNhRcyLx1hCX1ahJ4gfkGuNSjMWEiewQ3F5BfDoHWrx4PruEHOnWXI-U"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-9">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-9" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-9">
+<div class="aspect-[4/3] w-full overflow-hidden">
+<img alt="Spacious modern office interior" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Spacious modern office interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8TyXa7ek-W4Ol91mf6kX7Vq-giw-9glSRXdKp7KYV0T1SIHop8fpE2HTPWcmulAC134sFzt7U6r0YqfQSlfVQRDUx4AVE9xsWYNPniolgfhWOsF9ZWN4DmuqZL4rfubvcx085HEkSFqECMGm59rtWxfb3UeRypgkcgXL-TyC8IgkLdMWZPrarP4hm7FylPYGoxRwE7RRu3heQbMO6xjEgXT-CvVqIEcQXF16hVH387EnPgUNzM49q2xruex-2Abc4K8xoG0cZvmNN"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-9"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-9">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-8">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Spacious modern office interior" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8TyXa7ek-W4Ol91mf6kX7Vq-giw-9glSRXdKp7KYV0T1SIHop8fpE2HTPWcmulAC134sFzt7U6r0YqfQSlfVQRDUx4AVE9xsWYNPniolgfhWOsF9ZWN4DmuqZL4rfubvcx085HEkSFqECMGm59rtWxfb3UeRypgkcgXL-TyC8IgkLdMWZPrarP4hm7FylPYGoxRwE7RRu3heQbMO6xjEgXT-CvVqIEcQXF16hVH387EnPgUNzM49q2xruex-2Abc4K8xoG0cZvmNN"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-10">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-10" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-10">
+<div class="aspect-[3/4] w-full overflow-hidden">
+<img alt="Minimalist wooden staircase detail" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Minimalist wooden staircase detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANQJ0ds3jEQwikfgx142ZSHxOCGS5aJtt8BxVhL7LbLn6EaaYyk8NZb7pkbdZQt8ybCgvp4A1vmnnHuEROIiykMRKjfhnsswHZZdqSip7z9YkaJ3B7y4hHQJYGOuXiSQ_uskMl-CMPJMVa71nOkG--j_9G7dNRKrGvw-kywVTsAlssPoHivG6Bd0GNfKKsX7_WPfE3gOaO65m0LdWlfacppyXv154U6URdx09gqTSJ8Q87pEsw722YlnUDrLW5kqN1XT2hZxsQtZJT"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-10"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-10">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-9">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Minimalist wooden staircase detail" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANQJ0ds3jEQwikfgx142ZSHxOCGS5aJtt8BxVhL7LbLn6EaaYyk8NZb7pkbdZQt8ybCgvp4A1vmnnHuEROIiykMRKjfhnsswHZZdqSip7z9YkaJ3B7y4hHQJYGOuXiSQ_uskMl-CMPJMVa71nOkG--j_9G7dNRKrGvw-kywVTsAlssPoHivG6Bd0GNfKKsX7_WPfE3gOaO65m0LdWlfacppyXv154U6URdx09gqTSJ8Q87pEsw722YlnUDrLW5kqN1XT2hZxsQtZJT"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-11">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-11" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-11">
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Luxury villa exterior with garden" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Luxury villa exterior with garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMcvqf3bkujW0a5ODE3x03i1_mzfCbMj7-gLoM9sN6GvzfFPIe55FyXrkCvplNrTLh-KZGikSjdWeE6wgnmjldeaBUeuA0JBXHgpMKgv-dzP0bp9r_A3zGgnOHby5hNSzTDJkxPj9hFvKxsB1HycpKQLr6qbD_rF96ws_XV9R8qlKhS-5FV6JZ9p7OStKpYgT6x3VXCzlfu68iOBIx6uBtm4zPSpWxNRiQmbr1n1PwH4KMmG-0tlz87v3okJzDHQwmb7CpGTLo1nEc"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-11"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-11">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-10">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Luxury villa exterior with garden" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMcvqf3bkujW0a5ODE3x03i1_mzfCbMj7-gLoM9sN6GvzfFPIe55FyXrkCvplNrTLh-KZGikSjdWeE6wgnmjldeaBUeuA0JBXHgpMKgv-dzP0bp9r_A3zGgnOHby5hNSzTDJkxPj9hFvKxsB1HycpKQLr6qbD_rF96ws_XV9R8qlKhS-5FV6JZ9p7OStKpYgT6x3VXCzlfu68iOBIx6uBtm4zPSpWxNRiQmbr1n1PwH4KMmG-0tlz87v3okJzDHQwmb7CpGTLo1nEc"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-12">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+<div class="break-inside-avoid relative">
+<input class="peer sr-only" id="modal-12" type="checkbox"/>
+<label class="block group relative overflow-hidden rounded-xl bg-gray-100 dark:bg-[#1a2634] cursor-zoom-in shadow-sm hover:shadow-xl transition-all duration-300" for="modal-12">
+<div class="aspect-square w-full overflow-hidden">
+<img alt="Bright corporate meeting room with glass walls" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" data-alt="Bright corporate meeting room with glass walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLqRDa6Z8RTpkCZkuwbowu5iCV8mBvxlRiOuku8LZmLGGwt4wyX-98kfd3iP6JmBFjj8BEaDsi82IdX7207SDccTUEZXVTMVuPjUSbYaOQgIAFpxhWGH_AhkQNjLLih_aDe4wsrbpfy2yWyzDakw9pxJgtiRykwjw0joR0j9n82DbNn62hHUb6M1rWRdwg4KSBb-z_xxw5GGQVFGWCeJsdGZfCOafsIwMK8_4RQR1SaQb-iasIPFPNJpA_6sM4jiLvBIffM9oBqth7"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+<span class="material-symbols-outlined text-white">fullscreen</span>
+</div>
+</label>
+<div class="modal-backdrop fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm opacity-0 invisible peer-checked:opacity-100 peer-checked:visible p-4">
+<label class="absolute inset-0 cursor-default" for="modal-12"></label>
+<div class="relative w-full h-full flex items-center justify-center pointer-events-none">
+<label class="absolute top-4 right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-2 bg-black/20 hover:bg-black/40 rounded-full transition-colors hover:rotate-90 duration-300" for="modal-12">
+<span class="material-symbols-outlined text-3xl">close</span>
+</label>
+<label class="nav-btn-next absolute left-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-11">
+<span class="material-symbols-outlined text-3xl transform rotate-180">arrow_forward_ios</span>
+</label>
+<img alt="Bright corporate meeting room with glass walls" class="modal-image max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl pointer-events-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLqRDa6Z8RTpkCZkuwbowu5iCV8mBvxlRiOuku8LZmLGGwt4wyX-98kfd3iP6JmBFjj8BEaDsi82IdX7207SDccTUEZXVTMVuPjUSbYaOQgIAFpxhWGH_AhkQNjLLih_aDe4wsrbpfy2yWyzDakw9pxJgtiRykwjw0joR0j9n82DbNn62hHUb6M1rWRdwg4KSBb-z_xxw5GGQVFGWCeJsdGZfCOafsIwMK8_4RQR1SaQb-iasIPFPNJpA_6sM4jiLvBIffM9oBqth7"/>
+<label class="nav-btn-prev absolute right-4 z-[110] text-white/70 hover:text-white cursor-pointer pointer-events-auto p-3 bg-black/20 hover:bg-black/40 rounded-full" for="modal-1">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 flex justify-center">
+<div class="flex items-center gap-2 text-primary/50 text-sm">
+<div class="w-2 h-2 rounded-full bg-primary/50 animate-bounce"></div>
+<div class="w-2 h-2 rounded-full bg-primary/50 animate-bounce [animation-delay:0.1s]"></div>
+<div class="w-2 h-2 rounded-full bg-primary/50 animate-bounce [animation-delay:0.2s]"></div>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-gray-200 dark:border-[#233348] bg-background-light dark:bg-background-dark py-8">
+<div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 text-primary">
+<span class="material-symbols-outlined text-xl">apartment</span>
+</div>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">© 2026 م. محمد حافظ. جميع الحقوق محفوظة.</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Instagram</span>
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
