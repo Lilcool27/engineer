@@ -43,9 +43,16 @@
 <a class="text-[#0d131b] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal" href="#services">الخدمات</a>
 <a class="text-[#0d131b] dark:text-gray-300 hover:text-primary text-sm font-medium leading-normal" href="#portfolio">المعرض</a>
 </div>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-blue-700 transition-colors">
-<span class="truncate">تواصل معي</span>
-</button>
+<a href="#contact"
+   class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-blue-700 transition-colors">
+  <span class="truncate">تواصل معي</span>
+</a>
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  
 </div>
 <button class="md:hidden text-gray-700 dark:text-white">
 <span class="material-symbols-outlined">menu</span>
@@ -76,7 +83,7 @@
 <span>تحميل السيرة الذاتية</span>
 </button>
 <button class="flex items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-gray-100 dark:bg-gray-800 text-[#0d131b] dark:text-white border border-transparent hover:border-gray-300 dark:hover:border-gray-600 text-base font-bold transition-colors">
-                                    مشاهدة المشاريع
+                                    <a href="معرض.html"> مشاهدة المشاريع</a>
                                 </button>
 </div>
 </div>
@@ -190,7 +197,7 @@
     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">إنجازات نفتخر بها</h2>
     <p class="text-slate-500 dark:text-slate-400 text-lg">مختارات من مشاريعنا التي تجسد رؤيتنا في الجودة والابتكار.</p>
     </div>
-    <a class="inline-flex items-center gap-2 text-primary font-bold hover:text-primary-dark transition-colors group" href="#">
+    <a class="inline-flex items-center gap-2 text-primary font-bold hover:text-primary-dark transition-colors group" href="معرض.html">
                             عرض كافة المشاريع
                             <span class="material-symbols-outlined text-xl transition-transform group-hover:-translate-x-1 rtl:rotate-180">arrow_forward</span>
     </a>
@@ -411,19 +418,28 @@
     </div>
     </div>
     </section>
-    <footer class="bg-[#0f172a] text-white py-20 border-t border-slate-800">
+    <footer id="contact" class="bg-[#0f172a] text-white py-20 border-t border-slate-800">
     <div class="container mx-auto px-4 md:px-6">
     <div class="flex flex-col items-center text-center max-w-3xl mx-auto space-y-8">
     <h2 class="text-3xl md:text-4xl font-bold leading-tight">جاهز لبدء مشروعك القادم مع خبير محترف؟</h2>
     <p class="text-slate-400 text-lg">دعنا نناقش رؤيتك وكيف يمكننا تحويلها إلى واقع بكفاءة وجمالية.</p>
     <div class="flex flex-col sm:flex-row gap-4 w-full justify-center pt-4">
     <button class="flex items-center justify-center gap-3 h-14 px-8 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-lg transition-all shadow-lg shadow-primary/25 w-full sm:w-auto">
-    <span class="material-symbols-outlined">call</span>
-    <span>اتصل الآن</span>
+        <a href="tel:+966 55 024 1439"
+        class="flex items-center justify-center gap-3 h-14 px-8 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-lg transition-all shadow-lg shadow-primary/25 w-full sm:w-auto">
+       <span class="material-symbols-outlined">call</span>
+       <span>اتصل الآن</span>
+     </a>
+     
     </button>
     <button class="flex items-center justify-center gap-3 h-14 px-8 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-lg transition-all shadow-lg shadow-green-500/20 w-full sm:w-auto">
-    <span class="material-symbols-outlined">chat</span>
-    <span>واتساب</span>
+        <a href="https://wa.me/+966 55 024 1439"
+        target="_blank"
+        class="flex items-center justify-center gap-3 h-14 px-8 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-lg transition-all shadow-lg shadow-green-500/20 w-full sm:w-auto">
+       <span class="material-symbols-outlined">chat</span>
+       <span>واتساب</span>
+     </a>
+     
     </button>
     </div>
     <div class="mt-16 pt-8 border-t border-slate-800 w-full flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-4">
